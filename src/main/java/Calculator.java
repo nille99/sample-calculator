@@ -6,8 +6,8 @@
  * 
  * 
  * 
- *@author Rafael Silva
- *@version 1.0 
+ *@author niklas
+ *@version 2.0 
  * 
  **/
 public class Calculator {
@@ -52,11 +52,20 @@ public class Calculator {
 	 * 
 	 * @return: the result of the division.
 	 * */
-	public double divide(double firstNumber, double secondNumber){
-		return firstNumber/secondNumber;
+	//public double divide(double firstNumber, double secondNumber){
+	//	return firstNumber/secondNumber;
+	//}
+	
+	public double divide(double firstNumber, double secondNumber) {
+		double result = firstNumber / secondNumber;
+		
+		if(Double.isInfinite(result)) {
+			System.out.println("Division by zero?");
+			return -0.123456789;
+		}	
+		
+		return result;
 	}
-	
-	
 	
 
 }
