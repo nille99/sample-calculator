@@ -463,6 +463,9 @@ public class CalculatorTest {
 				LOG.info("Testing the method divide with: "+ firstNumber +" and " + secondNumber);
 				assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result),1);
 			
+		//test
+		
+				
 			//Testing the case 0 / random
 			
 				firstNumber = 0;
