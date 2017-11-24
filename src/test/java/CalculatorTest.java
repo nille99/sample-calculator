@@ -448,29 +448,31 @@ public class CalculatorTest {
 		public void testDivideZeros() {
 			//Testing the case 0 / 0
 			double firstNumber = 0;
-			double secondNumber = 0;
-			double result = firstNumber / secondNumber;
-			
+			double secondNumber = 0;			
+			double result = -0.123456789;
+		
 			LOG.info("Testing the method divide with: "+ firstNumber +" and " + secondNumber);
 			assertEquals(Math.round(calculator.multiply(firstNumber, secondNumber)), Math.round(result),1);
 			
-			//Testing the case 0 / random
+			//Testing the case random / 0
 			for(int i = 0;i<200;i++) {
+				firstNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+				secondNumber = 0;
+				result = -0.123456789;
+			
+				LOG.info("Testing the method divide with: "+ firstNumber +" and " + secondNumber);
+				assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result),1);
+			
+			//Testing the case 0 / random
+			
 				firstNumber = 0;
 				secondNumber = Double.valueOf(df.format(random.nextDouble()*1000));
-				result = firstNumber * secondNumber;
+				result = 0;
 				
 				LOG.info("Testing the method divide with: "+ firstNumber +" and " + secondNumber);
 				assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result),1);
 			
-			//Testing the case random / 0
 
-				firstNumber = Double.valueOf(df.format(random.nextDouble()*1000));
-				secondNumber = 0;
-				result = firstNumber * secondNumber;
-				
-				LOG.info("Testing the method divide with: "+ firstNumber +" and " + secondNumber);
-				assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result),1);
 			}
 		}
 		
